@@ -1,10 +1,13 @@
 class BikesController < ApplicationController
+  
   def index
     @bikes = Bike.all
   end
 
   def show
     @bike = Bike.find(params[:id])
+    @comment = Comment.new
+    @comment.bike_id = @bike.id
   end
 
   def new
