@@ -1,5 +1,7 @@
 Biker::Application.routes.draw do
-  resources :bikes
+  resources :bikes do
+    resources :comments
+  end
 
   root 'bikes#index'
   # The priority is based upon order of creation: first created -> highest priority.
