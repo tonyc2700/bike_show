@@ -12,11 +12,15 @@ class BikesController < ApplicationController
   end
 
   def create
-    @bike = Bike.new
-    @bike.title = params[:title]
-    @bike.body = params[:body]
+    @bike = Bike.new(params[:bike].permit(:title, :body))
     @bike.save
     redirect_to bike_path(@bike)
+  end
+
+  def destroy
+    @bike = Bike.find(params[:id])
+    @bike.destroy
+    redirect_to bikes_path
   end
 
 end
