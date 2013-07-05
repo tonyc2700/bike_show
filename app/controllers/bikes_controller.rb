@@ -6,4 +6,8 @@ class BikesController < ApplicationController
   def show
     @bike = Bike.find(params[:id])
   end
+
+  def new
+    @bike = Bike.new
+  end
 end
