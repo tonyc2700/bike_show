@@ -1,0 +1,20 @@
+<h1>Edit a Bike</h1>
+
+<%= form_for(@bike) do |b| %>
+  <ul>
+  <% @bike.errors.full_messages.each do |error| %>
+    <li><%= error %></li>
+  <% end %>
+  </ul>
+  <p>
+    <%= b.label :title %><br />
+    <%= b.text_field :title %>
+  </p>
+  <p>
+    <%= b.label :body %><br />
+    <%= b.text_area :body %>
+  </p>
+  <p>
+    <%= b.submit %>
+  </p>
+<% end %>
