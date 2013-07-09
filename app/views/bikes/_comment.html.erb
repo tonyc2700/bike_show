@@ -2,5 +2,5 @@
   <h4>Comment by <%= comment.author_name %></h4>
   <p>Posted <%= distance_of_time_in_words(comment.bike.created_at, comment.created_at) %> later.</p>
   <p class="comment"><%= comment.body %></p>
-  <%= link_to "delete", bike_path(@bike), method: :delete, confirm: "Are you sure?" %>
+  <%= link_to "Delete", bike_comment_path(comment.bike, comment), method: :delete, confirm: "Are you sure?" %>
 </div>  

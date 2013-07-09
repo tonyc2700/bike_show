@@ -1,5 +1,5 @@
 class BikesController < ApplicationController
-  
+
   def index
     @bikes = Bike.all
   end
@@ -17,14 +17,14 @@ class BikesController < ApplicationController
   def create
     @bike = Bike.new(params[:bike].permit(:title, :body))
     @bike.save
-    flash.notice = "Bike '#{@bike.title}' Created"
+    flash.notice = "Bike '#{@bike.title}' was created successfully."
     redirect_to bike_path(@bike)
   end
 
   def destroy
     @bike = Bike.find(params[:id])
     @bike.destroy
-    flash.notice = "Bike '#{@bike.title}' Deleted"
+    flash.notice = "Bike '#{@bike.title}' was deleted successfully."
     redirect_to bikes_path
   end
 
