@@ -1,4 +1,5 @@
 <h1><%= @bike.title %></h1>
+<img src="assets/P1000410.JPG" alt="Test bike" height="42" width="42">
 <p><%= @bike.body %></p>
 <h3>Comments (<%= @bike.comments.size %>)</h3>
 <%= render partial: 'bikes/comment', collection: @bike.comments %>

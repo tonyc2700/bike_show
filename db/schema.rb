@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130705101548) do
+ActiveRecord::Schema.define(version: 20130709082635) do
 
   create_table "bikes", force: true do |t|
     t.string   "title"
@@ -29,5 +29,11 @@ ActiveRecord::Schema.define(version: 20130705101548) do
   end
 
   add_index "comments", ["bike_id"], name: "index_comments_on_bike_id"
+
+  create_table "photos", force: true do |t|
+    t.integer  "bike_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
